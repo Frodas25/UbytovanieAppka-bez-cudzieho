@@ -146,7 +146,7 @@ public class RoomList extends AppCompatActivity {
                 ActivityCompat.requestPermissions(
                         RoomList.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        889
+                        888
                 );
             }
         });
@@ -223,7 +223,7 @@ public class RoomList extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if(requestCode == 889){
+        if(requestCode == 888){
             if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
@@ -240,7 +240,7 @@ public class RoomList extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if(requestCode == 889 && resultCode == RESULT_OK && data != null){
+        if(requestCode == 888 && resultCode == RESULT_OK && data != null){
             Uri uri = data.getData();
             try {
                 InputStream inputStream = getContentResolver().openInputStream(uri);
